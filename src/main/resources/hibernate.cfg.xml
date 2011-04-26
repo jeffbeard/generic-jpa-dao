@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+ "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.cohomefinder.domain.Listing" />
+        <mapping class="com.cohomefinder.domain.ListingAuxInfo" />
+        <mapping class="com.cohomefinder.domain.ListingHistory" />
+        <mapping class="com.cohomefinder.domain.ListingSource" />
+        <mapping class="com.cohomefinder.domain.ListingState" />
+        <mapping class="com.cohomefinder.domain.GeocodeSource" />
+        <mapping class="com.cohomefinder.domain.Feed" />
+        <mapping class="com.cohomefinder.domain.FeedRun" />
+        <mapping class="com.cohomefinder.domain.Realtor" />
+        <mapping class="com.cohomefinder.domain.RealtorAddress" />
+        <mapping class="com.cohomefinder.domain.RealtorCity" />
+        <mapping class="com.cohomefinder.domain.RealtorClient" />
+        <mapping class="com.cohomefinder.domain.StateBound" />
+    </session-factory>
+</hibernate-configuration>

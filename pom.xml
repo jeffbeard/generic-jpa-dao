@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.firebyte</groupId>
+    <artifactId>generic-jpa-dao</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>generic-jpa-dao</name>
+    <description>
+    Generic Hibernate JPA DAO. Uses Generics, Spring Framework, DI and an Annotations-based programming
+    model.
+    </description>
+    
+    <issueManagement>
+  	    <system>phpbt</system>
+  	    <url>http://bugzilla.firebyte.org</url>
+    </issueManagement>
+    <ciManagement>
+  	    <system>Hudson</system>
+  	    <url>http://ci.firebyte.org/generic-jpa-dao</url>
+    </ciManagement>
+    
+    <scm>
+  	    <connection></connection>
+        <developerConnection></developerConnection>
+    </scm>
+ 
+	<organization>
+	  	<name>Firebyte, LLC</name>
+	  	<url>http://firebyte.org/</url>
+    </organization>
+
+    <developers>  
+        <developer>
+            <id>beardj</id>
+            <name>Jeff Beard</name>
+            <email>dev@firebyte.org</email>
+            <organization>Firebyte</organization>
+            <timezone>-7</timezone>
+        </developer>        
+    </developers>
+    
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+        <!-- Specify a resource directory and set filtering to true  -->
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+	</build>
+	
+	<dependencies>
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-core</artifactId>
+	        <version>3.0.5.RELEASE</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-orm</artifactId>
+	        <version>3.0.5.RELEASE</version>
+	    </dependency>   
+	    <dependency>
+	    	<groupId>org.hibernate</groupId>
+	    	<artifactId>hibernate-entitymanager</artifactId>
+	    	<version>3.4.0.GA</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.slf4j</groupId>
+	    	<artifactId>slf4j-api</artifactId>
+	    	<version>1.4.2</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>mysql</groupId>
+	    	<artifactId>mysql-connector-java</artifactId>
+	    	<version>5.1.15</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>junit</groupId>
+	    	<artifactId>junit</artifactId>
+	    	<version>4.8.2</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>log4j</groupId>
+	    	<artifactId>log4j</artifactId>
+	    	<version>1.2.12</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>commons-dbcp</groupId>
+	    	<artifactId>commons-dbcp</artifactId>
+	    	<version>1.3</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-test</artifactId>
+	    	<version>3.0.5.RELEASE</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>net.sf.ehcache</groupId>
+	    	<artifactId>ehcache-core</artifactId>
+	    	<version>2.3.1</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.slf4j</groupId>
+	    	<artifactId>slf4j-log4j12</artifactId>
+	    	<version>1.4.2</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>commons-lang</groupId>
+	    	<artifactId>commons-lang</artifactId>
+	    	<version>2.6</version>
+	    </dependency>
+    </dependencies>  
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>maven2-repository</id>
+            <name>Firebyte Snapshot Repository</name>
+            <url>http://mvnrepo.firebyte.org/nexus/content/repositories/snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+        <repository>
+            <id>maven2-repository</id>
+            <name>COHomefinder Release Repository</name>
+            <url>http://mvnrepo.firebyte.org/nexus/content/repositories/releases</url>
+        </repository>       
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
+        <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+        <jdbc.url>
+            <![CDATA[jdbc:mysql://localhost/<database name>?autoReconnect=true]]>
+        </jdbc.url>
+        <jdbc.username>root</jdbc.username>
+        <jdbc.password></jdbc.password>
+    </properties>
+    
+</project>
