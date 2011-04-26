@@ -6,8 +6,8 @@
     <version>1.0-SNAPSHOT</version>
     <name>generic-jpa-dao</name>
     <description>
-    Generic Hibernate JPA DAO. Uses Generics, Spring Framework, DI and an Annotations-based programming
-    model.
+    Generic Hibernate JPA DAO. Uses Generics, Spring Framework, DI and an 
+    Annotations-based programming model.
     </description>
     
     <issueManagement>

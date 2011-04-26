@@ -48,7 +48,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#countAll()
+	 * @see org.firebyte.dao.GenericRepository#countAll()
 	 */
 	@Override
 	public int countAll() {
@@ -57,7 +57,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#countByExample(java.lang.Object)
+	 * @see org.firebyte.dao.GenericRepository#countByExample(java.lang.Object)
 	 */
 	@Override
 	public int countByExample(final T exampleInstance) {
@@ -72,7 +72,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#findAll()
+	 * @see org.firebyte.dao.GenericRepository#findAll()
 	 */
 	@Override
 	public List<T> findAll() {
@@ -81,7 +81,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#findByExample(java.lang.Object)
+	 * @see org.firebyte.dao.GenericRepository#findByExample(java.lang.Object)
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -94,7 +94,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#findById(java.io.Serializable)
+	 * @see org.firebyte.dao.GenericRepository#findById(java.io.Serializable)
 	 */
 	@Override
 	public T get(final ID id) {
@@ -104,7 +104,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#findByNamedQuery(java.lang.String, java.lang.Object[])
+	 * @see org.firebyte.dao.GenericRepository#findByNamedQuery(java.lang.String, java.lang.Object[])
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -122,7 +122,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#findByNamedQueryAndNamedParams(java.lang.String, java.util.Map)
+	 * @see org.firebyte.dao.GenericRepository#findByNamedQueryAndNamedParams(java.lang.String, java.util.Map)
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -142,7 +142,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#save(java.lang.Object)
+	 * @see org.firebyte.dao.GenericRepository#save(java.lang.Object)
 	 */
 	@Override
 	@Transactional
@@ -153,7 +153,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#delete(java.lang.Object)
+	 * @see org.firebyte.dao.GenericRepository#delete(java.lang.Object)
 	 */
 	@Override
 	public void remove(T entity) {
@@ -162,7 +162,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.repository.GenericRepository#remove(java.io.Serializable)
+	 * @see org.firebyte.repository.GenericRepository#remove(java.io.Serializable)
 	 */
 	@Override
 	public void remove(ID id) {
@@ -172,7 +172,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see com.cohomefinder.dao.GenericRepository#getEntityClass()
+	 * @see org.firebyte.dao.GenericRepository#getEntityClass()
 	 */
 	@Override
 	public Class<T> getEntityClass() {
