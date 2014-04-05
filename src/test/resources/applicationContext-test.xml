@@ -8,13 +8,6 @@
         <property name="location" value="classpath:database.properties"/>
     </bean>
 
-    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
-        <!--<property name="driverClassName" value="${hibernate.connection.driver_class}"/>-->
-        <!--<property name="url" value="${hibernate.connection.url}"/>-->
-        <!--<property name="username" value="${hibernate.connection.username}"/>-->
-        <!--<property name="password" value="${hibernate.connection.password}"/>-->
-    <!--</bean>-->
-
     <jdbc:embedded-database id="dataSource" type="HSQL">
     </jdbc:embedded-database>
 
