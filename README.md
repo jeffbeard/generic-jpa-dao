@@ -2,15 +2,21 @@
 
 #### An Experiment with Generics
 
-This project was originally intended as an experiement with Java Generics. The idea was that
+This project was originally intended as an experiment with Java Generics. The idea was that
 Generics could be used to minimize code written for common data access use cases. This
 project is a montage of an number of projects and articles. It depends on Spring and Hibernate
 although it should be easily adapted to other JPA implementations as well.
 
 
+#### Caveat
+
+This project is probably of little practical value considering the availability of spring-data-jpa.
+
+
 #### Usage
 
-This project is tested with Java 1.7 however I would expect it to work with 1.6 as well.
+This project is tested with Java 1.7 however I would expect it to work with 1.6 as well, just not
+the tests since rhw Diamond Operator is used.
 
 Client applications need to specify the following in their dependency configuration:
 
@@ -35,10 +41,13 @@ Client applications will need a persistence.xml that might look something like t
 
    <persistence-unit name="my-persistence-unit" transaction-type="RESOURCE_LOCAL">
        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>org.firebyte.domain.User</class>
+        <class>domain.User</class>
+        <class>domain.Role</class>
    </persistence-unit>
 </persistence>
 ```
+
+Note that if you use Spring you can dispense with the persistence.xml in favor of Annotations.
 
 
 ##### Spring configuration

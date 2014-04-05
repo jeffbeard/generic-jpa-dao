@@ -41,7 +41,7 @@ public class GenericDAOJPATest extends TestCase {
     @Test
     public void genericDAOShouldSaveAPersonEntity() throws Exception {
         // Save a person
-        GenericDAO<Person, Long> personDao = new GenericDAOJPA<Person, Long>(Person.class);
+        GenericDAO<Person, Long> personDao = new GenericDAOJPA<>(Person.class);
 
         personDao.setEntityManager(entityManager);
         Person person = new Person("Bob", "Smith");
@@ -56,8 +56,7 @@ public class GenericDAOJPATest extends TestCase {
     public void genericDAOShouldSaveALizardEntity() throws Exception {
 
         // Save a lizard
-        GenericDAO<Lizard, Long> lizardLongGenericDAOJPA
-            = new GenericDAOJPA<Lizard, Long>(Lizard.class);
+        GenericDAO<Lizard, Long> lizardLongGenericDAOJPA = new GenericDAOJPA<>(Lizard.class);
 
         lizardLongGenericDAOJPA.setEntityManager(entityManager);
         Lizard lizard = new Lizard("Lacertilia", "Chamaeleonidae", "Bradypodion");
@@ -73,7 +72,7 @@ public class GenericDAOJPATest extends TestCase {
     public void genericDAOShouldSaveATreeEntity() throws Exception {
         // Save a Tree
 
-        GenericDAO<Tree, Long> treeDao = new GenericDAOJPA<Tree, Long>(Tree.class);
+        GenericDAO<Tree, Long> treeDao = new GenericDAOJPA<>(Tree.class);
 
         treeDao.setEntityManager(entityManager);
         Tree tree = new Tree("Pinaceae", "Pinus", "Strobus");
@@ -82,66 +81,5 @@ public class GenericDAOJPATest extends TestCase {
         Tree anotherTree = treeDao.get(tree.getId());
 
         assertThat(anotherTree, is(equalTo(tree)));
-    }
-
-    @Test
-    public void shouldGetAnyEntity() throws Exception {
-
-        //
-    }
-
-    @Test
-    public void shouldRemoveEntity() throws Exception {
-
-    }
-
-    @Test
-    public void shouldRemoveEntityById() throws Exception {
-
-    }
-
-    @Test
-    public void shouldCountAllEntities() throws Exception {
-
-    }
-
-    @Test
-    public void shouldCountByExampleEntity() throws Exception {
-
-    }
-
-    @Test
-    public void shouldFindAllEntities() throws Exception {
-
-    }
-
-    @Test
-    public void shouldFindEntityByExample() throws Exception {
-
-    }
-
-    @Test
-    public void shouldFindByNamedQuery() throws Exception {
-
-    }
-
-    @Test
-    public void shouldFindByNamedQueryAndNamedParams() throws Exception {
-
-    }
-
-    @Test
-    public void shouldFindByCriteria() throws Exception {
-
-    }
-
-    @Test
-    public void shouldFindByCriteria1() throws Exception {
-
-    }
-
-    @Test
-    public void shouldCountByCriteria() throws Exception {
-
     }
 }

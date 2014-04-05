@@ -197,7 +197,6 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 	 *
 	 * @param entityManager
 	 */
-	// @Required spring framework
 	@PersistenceContext
 	public void setEntityManager(final EntityManager entityManager) {
 		this.entityManager = entityManager;
