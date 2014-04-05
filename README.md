@@ -10,25 +10,29 @@ project is a montage of an number of projects and articles. It uses Spring and H
 
 #### Usage
 
+This project is tested with Java 1.7 however I would expect it to work with 1.6 as well.
+
 Client applications need to specify the following in their dependency configuration:
 
 1. Spring Framework (tested with 4.0.3-RELEASE)
 2. Hibernate (tested with 4.3.4.Final)
-3. slf4j
+3. slf4j (tested with 1.4.2)
+
+Client applications will need to provide their own JPA and Spring configuration.
 
 
-Client applications will need to provide their own JPA and Spring configuration:
+##### JPA configuration
 
-##### Custom persistence.xml that might look something like this
+Client applications will need a persistence.xml that might look something like this:
+
 
 ```xml
 
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
-http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
     version="2.0">
-   <persistence-unit name="my-pu" transaction-type="RESOURCE_LOCAL">
+
+   <persistence-unit name="my-persistence-unit" transaction-type="RESOURCE_LOCAL">
        <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>org.firebyte.domain.User</class>
    </persistence-unit>
@@ -36,7 +40,9 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 ```
 
 
-##### A Spring configuration file that might look something like this (untested configuration):
+##### Spring configuration
+
+You're Spring Configuration file might look something like this (entirely untested) configuration:
 
 ```xml
 
@@ -101,7 +107,9 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 
 ```
 
-##### Code usage might look something like this:
+##### Code
+
+Using the GenerDAO JPA implementation might look something like this:
 
 ```java
 
@@ -118,7 +126,7 @@ person = personDao.save(person);
 
 #### License
 
-Copyright 2014 Jeff Beard
+Copyright 2008-2014 Jeff Beard
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
