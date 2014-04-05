@@ -3,9 +3,9 @@
 #### An Experiment with Generics
 
 This project was originally intended as an experiement with Java Generics. The idea was that
-Generics could be used to minimize code written for basic data access CRUD capabilities. This
-project is a montage of an number of projects and articles. It uses Spring and Hibernate.
-
+Generics could be used to minimize code written for common data access use cases. This
+project is a montage of an number of projects and articles. It depends on Spring and Hibernate
+although it should be easily adapted to other JPA implementations as well.
 
 
 #### Usage
@@ -19,6 +19,7 @@ Client applications need to specify the following in their dependency configurat
 3. slf4j (tested with 1.4.2)
 
 Client applications will need to provide their own JPA and Spring configuration.
+
 
 
 ##### JPA configuration
@@ -59,15 +60,15 @@ You're Spring Configuration file might look something like this (entirely untest
 
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
-    <!--  tell spring to use annotation based congfiguration -->
+    <!--  Use annotation based congfiguration -->
     <context:annotation-config />
 
-    <!--  tell spring where to find the beans -->
+    <!--  Tell Spring where to find annotations -->
     <context:component-scan base-package="org.firebyte.repository" />
 
     <!--
         Make Properties available to the application. You can use filters to
-        configure for different environments unless you have gone all 12 Factor
+        configure for different environments unless you've gone all 12 Factor
         in which case use Puppet, Chef or a configuration service
         for Continuous Delivery and production environments.
     -->
