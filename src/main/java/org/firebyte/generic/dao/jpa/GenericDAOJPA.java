@@ -4,31 +4,35 @@
  */
 package org.firebyte.generic.dao.jpa;
 
-import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.util.List;
-import java.util.Map;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import org.firebyte.generic.dao.GenericDAO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Projections;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.List;
+import java.util.Map;
 
 
 /**
  * JPA Hibernate implementation of the GenericDAO
- * 
+ *
  * @author <a href="mailto:jeff@firebyte.org">Jeff Beard</a>
  *
  */
 public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, ID>  {
+
+    /** logback Logger for class GenericDAOJPA */
+    private static Logger logger = LoggerFactory.getLogger(GenericDAOJPA.class.getName());
 
 	private final Class<T> persistentClass;
 	
@@ -147,7 +151,16 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 	@Override
 	@Transactional
 	public T save(T entity) {
-		final T savedEntity = getEntityManager().merge(entity);
+
+        T savedEntity;
+
+        // Approximate the Hibernate saveOrUpdate functionality
+        if (getEntityManager().contains(entity) ) {
+            savedEntity = getEntityManager().merge(entity);
+        } else {
+            getEntityManager().persist(entity);
+            savedEntity = entity;
+        }
 		return savedEntity;
 	}
 
