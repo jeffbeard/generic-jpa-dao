@@ -19,7 +19,7 @@ Client applications need to specify the following in their dependency configurat
 
 Client applications will need to provide their own JPA and Spring configuration:
 
-* Custom persistence.xml that might look something like this
+##### Custom persistence.xml that might look something like this
 
 ```xml
 
@@ -36,7 +36,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 ```
 
 
-* A Spring configuration file that might look something like this (untested configuration):
+##### A Spring configuration file that might look something like this (untested configuration):
 
 ```xml
 
@@ -59,7 +59,12 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
     <!--  tell spring where to find the beans -->
     <context:component-scan base-package="org.firebyte.repository" />
 
-    <!-- Make Properties from file that is filtered by the build available to the application -->
+    <!--
+        Make Properties available to the application. You can use filters to
+        configure for different environments unless you have gone all 12 Factor
+        in which case use Puppet, Chef or a configuration service
+        for Continuous Delivery and production environments.
+    -->
     <context:property-placeholder location="classpath:database.properties" />
 
      <!-- DataSource: MySQL. Note the use of the properties found in the file -->
@@ -96,7 +101,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 
 ```
 
-* Code usage might look something like this:
+##### Code usage might look something like this:
 
 ```java
 
