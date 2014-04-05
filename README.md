@@ -127,7 +127,7 @@ person = personDao.save(person);
 
 #### License
 
-Copyright 2008-2014 Jeff Beard
+Copyright 2014 Jeff Beard
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
