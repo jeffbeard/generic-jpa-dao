@@ -4,14 +4,13 @@
  */
 package org.firebyte.generic.dao;
 
+import javax.persistence.EntityManager;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-
 /**
- * Generic DAO interface for basic CRUD functionality
+ * Generic DAO interface for common data access functionality
  * 
  * @author <a href="mailto:jeff@firebyte.org">Jeff Beard</a>
  *
