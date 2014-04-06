@@ -10,8 +10,8 @@ although it should be easily adapted to other JPA implementations as well.
 
 #### Caveat
 
-This project is probably of little practical value considering the
-availability of spring-data-jpa unless Sprng isn't used at all.
+This project is probably of little practical value, unless Spring isn't used, considering the
+availability of spring-data-jpa.
 
 
 #### Usage
