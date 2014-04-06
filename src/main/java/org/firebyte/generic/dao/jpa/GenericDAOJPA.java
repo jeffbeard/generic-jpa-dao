@@ -92,7 +92,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 	public List<T> findByExample(final T exampleInstance) {
 		Session session = (Session) getEntityManager().getDelegate();
 		Criteria crit = session.createCriteria(getEntityClass());
-		final List<T> result = crit.list();  
+		final List<T> result = crit.list();
 		return result; 
 	}
 
@@ -108,7 +108,8 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.firebyte.dao.GenericRepository#findByNamedQuery(java.lang.String, java.lang.Object[])
+	 * @see org.firebyte.dao.GenericDAO#findByNamedQuery(java.lang.String, java.lang.Object[])
+	 *
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -130,8 +131,7 @@ public class GenericDAOJPA<T, ID extends Serializable> implements GenericDAO<T, 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<T> findByNamedQueryAndNamedParams(final String name,
-			final Map<String, ? extends Object> params) {
+	public List<T> findByNamedQueryAndNamedParams(final String name, final Map<String, ? extends Object> params) {
 		
 		Query query = getEntityManager().createNamedQuery(name);
 

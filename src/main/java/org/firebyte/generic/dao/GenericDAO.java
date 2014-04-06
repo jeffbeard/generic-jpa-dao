@@ -50,6 +50,21 @@ public interface GenericDAO<T, PK extends Serializable> {
     /**
      * Find using a named query.
      *
+     * Note that Named Queries are configured in the Entities and look
+     * like this:
+     *
+     * <pre>
+     *
+     * {@literal @}Entity
+     * {@literal @}NamedQuery(name="findSalaryForNameAndDepartment",
+     *   query="SELECT e.salary " +
+     *         "FROM Enmployee e " +
+     *         "WHERE e.department.name = :deptName AND " +
+     *         "      e.name = :empName")
+     *  public class Employee {
+     *  ...
+     * </pre>
+     *
      * @param queryName the name of the query
      * @param params the query parameters
      *
@@ -83,7 +98,9 @@ public interface GenericDAO<T, PK extends Serializable> {
     int countByExample(final T exampleInstance);
  
     /**
-     * Save an entity. This can be either a INSERT or UPDATE in the database.
+     * Save an entity. This is an "INSERT or UPDATE" operation based on
+     * the existence of an entity in the current persistence context. This
+     * is an approximation of the Hibernate "Session.saveOrUpdate()" method.
      * 
      * @param entity the entity to save
      * 
@@ -92,14 +109,14 @@ public interface GenericDAO<T, PK extends Serializable> {
     T save(final T entity);
 
     /**
-     * delete an entity from the database.
+     * Delete an entity from the persistence store
      * 
-     * @param entity the entity to delete
+     * @param entity the entity to delete˝
      */
     void remove(final T entity);
     
     /**
-     * Delete an entity from the database by PK
+     * Delete an entity from the persistence store by Primary Key ID
      * 
      * @param id
      */
@@ -107,7 +124,8 @@ public interface GenericDAO<T, PK extends Serializable> {
     
     /**	
      * Setting for EntityManager DI
-     * @param entityManager
+     *
+     * @param entityManager An instance of an EntityManager
      */
     void setEntityManager(EntityManager entityManager);
 }
