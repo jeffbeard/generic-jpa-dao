@@ -58,7 +58,7 @@ public interface GenericDAO<T, PK extends Serializable> {
      * {@literal @}Entity
      * {@literal @}NamedQuery(name="findSalaryForNameAndDepartment",
      *   query="SELECT e.salary " +
-     *         "FROM Enmployee e " +
+     *         "FROM Employee e " +
      *         "WHERE e.department.name = :deptName AND " +
      *         "      e.name = :empName")
      *  public class Employee {
