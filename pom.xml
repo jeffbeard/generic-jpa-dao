@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.firebyte</groupId>
     <artifactId>generic-jpa-dao</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <name>generic-jpa-dao</name>
     <description>
     Generic Hibernate JPA DAO. Uses Generics, Spring Framework, DI and an 
@@ -83,7 +83,7 @@
         <spring.version>5.2.18.RELEASE</spring.version>
         <slf4j.version>1.7.32</slf4j.version>
         <dbcp.version>1.3</dbcp.version>
-        <logback.version>1.2.7</logback.version>
+        <logback.version>1.2.10</logback.version>
 
         <hsqldb.version>2.3.2</hsqldb.version>
         <junit.version>4.13.1</junit.version>
