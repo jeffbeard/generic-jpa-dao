@@ -10,19 +10,13 @@ although it should be easily adapted to other JPA implementations as well.
 
 #### Caveat
 
-This project is probably of little practical value. It continues largely as a testing ground for GitHub and other services' features.
+This project is of little practical value. It continues largely as a testing ground.
 
 
 #### Usage
 
 This project is tested with Java 1.7 however I would expect it to work with 1.6 as well, just not
 the tests since rhw Diamond Operator is used.
-
-Client applications need to specify the following in their dependency configuration:
-
-1. Spring Framework (tested with 4.0.3-RELEASE)
-2. Hibernate (tested with 4.3.4.Final)
-3. slf4j (tested with 1.4.2)
 
 Client applications will need to provide their own JPA and Spring configuration.
 
