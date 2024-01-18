@@ -16,7 +16,7 @@
     </issueManagement>
     <ciManagement>
   	    <system>Hudson</system>
-  	    <url>http://ci.firebyte.org/generic-jpa-dao</url>
+  	    <url>https://ci.firebyte.org/generic-jpa-dao</url>
     </ciManagement>
     
     <scm>
@@ -26,7 +26,7 @@
  
 	<organization>
 	  	<name>Firebyte</name>
-	  	<url>http://firebyte.org/</url>
+	  	<url>https://firebyte.org/</url>
     </organization>
 
     <developers>  
@@ -185,13 +185,13 @@
         <snapshotRepository>
             <id>maven2-repository</id>
             <name>Firebyte Snapshot Repository</name>
-            <url>http://maven.firebyte.org/nexus/content/repositories/snapshots</url>
+            <url>https://maven.firebyte.org/nexus/content/repositories/snapshots</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
         <repository>
             <id>maven2-repository</id>
             <name>Firebyte Release Repository</name>
-            <url>http://maven.firebyte.org/nexus/content/repositories/releases</url>
+            <url>https://maven.firebyte.org/nexus/content/repositories/releases</url>
         </repository>       
     </distributionManagement>
 
