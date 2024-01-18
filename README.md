@@ -10,7 +10,8 @@ although it should be easily adapted to other JPA implementations as well.
 
 #### Caveat
 
-This project is of little practical value. It continues largely as a testing ground.
+This project is of little practical value. It continues largely as a testing ground for things like GitHub Actions, 
+security scanners, and other CICD related tooling.
 
 
 #### Usage
